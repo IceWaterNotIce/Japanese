@@ -1,0 +1,19 @@
+import re
+
+#verb = input("Enter the Japanese verb : ")
+verb = "会う"
+
+def a():
+    if re.match(r'[\s\S][いきしちにひみりぎじぢび][る]', verb) != None:
+        return "上一段活用"
+    if re.match(r'[\s\S][えけせてねへめれげぜでべ][る]', verb) != None:
+        return "下一段活用"
+    if re.match(r'[\s\S][うくすつぬぶむ]', verb) != None or \
+       re.match(r'[\s\S][あかさたなはまやらわがざだば][る]', verb) != None or \
+       re.match(r'[\s\S][うくすつぬふむゆるぐずづぶ][る]', verb) != None or \
+       re.match(r'[\s\S][おこそとのほもよろをごぞどぼ][る]', verb) != None :
+        return "五段活用"
+    return "カ行變格活用"
+    return "サ行變格活用"
+
+print(a())
